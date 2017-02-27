@@ -1,0 +1,27 @@
+[
+  {
+    "id": "id0",
+    "checked": true,
+    "content": "Steal plans for Death Star"
+  },
+  {
+    "id": "id1",
+    "checked": true,
+    "content": "Assemble fleet"
+  },
+  {
+    "id": "id2",
+    "checked": true,
+    "content": "Choose squad leaders"
+  },
+  {
+    "id": "id3",
+    "checked": false,
+    "content": "Distract tie fighters"
+  },
+  {
+    "id": "id4",
+    "checked": false,
+    "content": "Fire missile into vulnerbility"
+  }
+]
