@@ -5,13 +5,16 @@ class TodoList extends Component {
   constructor(props) {
     super();
     this.state = {
-      todos: props.initialTodos
+      todos: props.initialTodos,
+      value: ''
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleCheck(id, checked) {
-    this.setState((previousState) => {
-      previousState.todos.find(todo => todo.id === id).checked = checked
+    this.setState((previousState) => {  
+      previousState.todos.find( todo => todo.id === `id${id.toString()}`).checked = checked
       return previousState;
     });
   }
@@ -28,10 +31,34 @@ class TodoList extends Component {
     });
   }
 
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const newToDo = {
+      "id": `id${this.state.todos.length}`,
+      "checked": false,
+      "content": this.state.value
+    }
+    this.setState({todos: this.state.todos.concat([newToDo]), value: ''});
+  }
+
+  renderAddToDoItem(){
+    return(
+      <form onSubmit={this.handleSubmit}>
+        <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="Add New Item..."/>
+        <input type="submit" value="Submit" />
+      </form>
+    )
+  }
+
   render() {
     return (
       <div className="TodoList">
         {this.renderTodoListItems()}
+        {this.renderAddToDoItem()}
       </div>
     );
   }
