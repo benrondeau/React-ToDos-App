@@ -1,7 +1,6 @@
 Todo App using React.
 
-[https://travis-ci.org/benrondeau/YEI-ToDos-App.svg](https://travis-ci.org/benrondeau/YEI-ToDos-App.svg)
-
+[![Build Status](https://travis-ci.org/benrondeau/YEI-ToDos-App.svg?branch=master)](https://travis-ci.org/benrondeau/YEI-ToDos-App)
 ### Additions/Improvements
 
 - Added build script, for deployment purposes.
