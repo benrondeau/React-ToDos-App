@@ -2,26 +2,31 @@
   {
     "id": "id0",
     "checked": true,
-    "content": "Steal plans for Death Star"
+    "content": "Steal plans for Death Star",
+    "created_at": 1488666501294
   },
   {
     "id": "id1",
     "checked": true,
-    "content": "Assemble fleet"
+    "content": "Assemble fleet",
+    "created_at": 1488666501294
   },
   {
     "id": "id2",
     "checked": true,
-    "content": "Choose squad leaders"
+    "content": "Choose squadron leaders",
+    "created_at": 1488666501295
   },
   {
     "id": "id3",
     "checked": false,
-    "content": "Distract tie fighters"
+    "content": "Distract tie fighters",
+    "created_at": 1488666501296
   },
   {
     "id": "id4",
     "checked": false,
-    "content": "Fire missile into vulnerbility"
+    "content": "Fire missile into vulnerability",
+    "created_at": 1488666501297
   }
 ]

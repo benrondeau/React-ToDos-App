@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import TodoListItem from './TodoListItem';
+import TodoListAddItem from './TodoListAddItem';
+import './TodoList.css';
 
 class TodoList extends Component {
   constructor(props) {
@@ -13,7 +15,7 @@ class TodoList extends Component {
   }
 
   handleCheck(id, checked) {
-    this.setState((previousState) => {  
+    this.setState((previousState) => {
       previousState.todos.find( todo => todo.id === `id${id.toString()}`).checked = checked
       return previousState;
     });
@@ -31,6 +33,7 @@ class TodoList extends Component {
     });
   }
 
+  // ADDING ITEMS CODE
   handleChange(event) {
     this.setState({value: event.target.value});
   }
@@ -40,7 +43,8 @@ class TodoList extends Component {
     const newToDo = {
       "id": `id${this.state.todos.length}`,
       "checked": false,
-      "content": this.state.value
+      "content": this.state.value,
+      "created_at": Date.now()
     }
     this.setState({todos: this.state.todos.concat([newToDo]), value: ''});
   }
@@ -68,7 +72,8 @@ TodoList.propTypes = {
   initialTodos: React.PropTypes.arrayOf(React.PropTypes.shape({
     id: React.PropTypes.string,
     checked: React.PropTypes.bool,
-    content: React.PropTypes.string
+    content: React.PropTypes.string,
+    created_at: React.PropTypes.number
   })).isRequired
 };
 

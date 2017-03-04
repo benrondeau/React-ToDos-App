@@ -1,3 +1,8 @@
 .TodoListItem-checked {
   text-decoration: line-through;
 }
+
+.TodoListItem{
+  text-align: left;
+  padding: 5px;
+}

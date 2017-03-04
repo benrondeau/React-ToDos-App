@@ -3,7 +3,7 @@ import './TodoListItem.css';
 
 function TodoListItem({ checked, content, onChange }) {
   return (
-    <div>
+    <div className="TodoListItem">
       <label className={checked ? 'TodoListItem-checked' : ''}>
         <input type="checkbox" checked={checked} onChange={onChange} />
         {content}
