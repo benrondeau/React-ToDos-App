@@ -1,6 +1,6 @@
 Todo App using React.
 
-https://travis-ci.org/benrondeau/YEI-ToDos-App.svg
+[https://travis-ci.org/benrondeau/YEI-ToDos-App.svg](https://travis-ci.org/benrondeau/YEI-ToDos-App.svg)
 
 ### Additions/Improvements
 
