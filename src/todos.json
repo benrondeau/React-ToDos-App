@@ -9,7 +9,7 @@
     "id": "id1",
     "checked": true,
     "content": "Assemble fleet",
-    "created_at": 1488666501294
+    "created_at": 1488666501293
   },
   {
     "id": "id2",
@@ -21,12 +21,12 @@
     "id": "id3",
     "checked": false,
     "content": "Distract tie fighters",
-    "created_at": 1488666501296
+    "created_at": 1488666501290
   },
   {
     "id": "id4",
     "checked": false,
     "content": "Fire missile into vulnerability",
-    "created_at": 1488666501297
+    "created_at": 1488666501291
   }
 ]

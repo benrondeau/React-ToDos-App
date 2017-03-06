@@ -8,7 +8,6 @@ class App extends Component {
     return (
       <div className="App">
         <h2>Todo List App</h2>
-        <div id="SortBy">Sort By: Name Recency</div>
         <TodoList initialTodos={seededTodos} />
       </div>
     );
