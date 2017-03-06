@@ -3,6 +3,10 @@ import { shallow } from 'enzyme';
 import App from './App';
 import seededTodos from './todos.json';
 
+it('renders without crashing', () => {
+  shallow(<App />);
+});
+
 it('renders the header', () => {
   const wrapper = shallow(<App />);
   const header = wrapper.find('h2');

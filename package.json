@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
     "build": "node node_modules/react-scripts/scripts/build.js"
   }
 }
