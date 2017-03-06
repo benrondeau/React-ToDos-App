@@ -94,7 +94,7 @@ class TodoList extends Component {
         <div id="SortBy">
           Sort By: &nbsp;
           <button id="sortByName" onClick={this.sortByName.bind(this)}>Name</button>&nbsp;
-          <button id="sortByDate" onClick={this.sortByName.bind(this)}>Recency</button>
+          <button id="sortByDate" onClick={this.sortByRecency.bind(this)}>Recency</button>
         </div>
         <div className="TodoList">
           {this.renderTodoListItems()}
