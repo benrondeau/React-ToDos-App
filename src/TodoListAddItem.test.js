@@ -4,33 +4,37 @@ import TodoListAddItem from './TodoListAddItem';
 
 describe('TodoListAddItem tests', () => {
 
-  const minProps = {
-    addTodoItem: function(){}
-  };
-
-  const wrapper = shallow(<TodoListAddItem addTodoItem={function(){}} />);
+  const wrapper = shallow(<TodoListAddItem addTodoItem={ ()=>{} } />);
 
   it('should render <TodoListAddItem/> without crashing', () => {
     shallow(<TodoListAddItem addTodoItem={function(){}} />);
   });
 
-  it('user input should update state', () => {
-    // this.state.value updates when the user types in the field
-    expect(1).toEqual(1);
+  it('user input should update state.value', () => {
+    const tempEvent = { target : { value : "Testing123" } };
+    wrapper.instance().handleChange(tempEvent);
+    expect(wrapper.instance().state.value).toEqual('Testing123');
   });
 
   it('should not accept an empty field for submission', () => {
-    // how to do this? render both components and then test?
-    expect(1).toEqual(1);
+    const tempEvent = { preventDefault: ()=>{} };
+    wrapper.instance().setState({ value: '' });
+    wrapper.instance().handleSubmit(tempEvent);
+    expect(wrapper.instance().state.fieldEmpty).toEqual(true);
   });
 
-  it('successfully submit form and updates state of parent component', () => {
-    // how to do this? render both components and then test?
-    expect(1).toEqual(1);
+  it('submit form', () => {
+    const tempEvent = { preventDefault: ()=>{} };
+    wrapper.instance().setState({ value: 'Testing123' });
+    wrapper.instance().handleSubmit(tempEvent);
+    expect(wrapper.instance().state.fieldEmpty).toEqual(false);
   });
 
   it('clear out form input value after submission', () => {
-    expect(1).toEqual(1);
+    const tempEvent = { preventDefault: ()=>{} };
+    wrapper.instance().setState({ value: 'Testing123' });
+    wrapper.instance().handleSubmit(tempEvent);
+    expect(wrapper.instance().state.value).toEqual('');
   });
 
 })
