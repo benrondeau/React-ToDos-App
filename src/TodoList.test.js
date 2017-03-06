@@ -10,6 +10,6 @@ it('renders a TodoListItem for each todo', () => {
 
 it('updates the todos state with handleCheck()', () => {
   const wrapper = shallow(<TodoList initialTodos={seededTodos} />);
-  wrapper.instance().handleCheck('id0', false);
+  wrapper.instance().handleCheck('0', false);
   expect(wrapper.instance().state.todos[0].checked).toEqual(false);
 });

@@ -7,11 +7,8 @@ class TodoList extends Component {
   constructor(props) {
     super();
     this.state = {
-      todos: props.initialTodos,
-      value: ''
+      todos: props.initialTodos
     }
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleCheck(id, checked) {
@@ -33,36 +30,21 @@ class TodoList extends Component {
     });
   }
 
-  // ADDING ITEMS CODE
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    const newToDo = {
+  addTodoItem(value){
+    let newToDo = {
       "id": `id${this.state.todos.length}`,
       "checked": false,
-      "content": this.state.value,
+      "content": value,
       "created_at": Date.now()
     }
-    this.setState({todos: this.state.todos.concat([newToDo]), value: ''});
-  }
-
-  renderAddToDoItem(){
-    return(
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="Add New Item..."/>
-        <input type="submit" value="Submit" />
-      </form>
-    )
+    this.setState({todos: this.state.todos.concat([newToDo])});
   }
 
   render() {
     return (
       <div className="TodoList">
         {this.renderTodoListItems()}
-        {this.renderAddToDoItem()}
+        <TodoListAddItem addTodoItem={this.addTodoItem.bind(this)}/>
       </div>
     );
   }
