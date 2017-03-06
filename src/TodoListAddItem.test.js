@@ -1,13 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TodoListAddItem from './TodoList';
+import TodoListAddItem from './TodoListAddItem';
 
 describe('TodoListAddItem tests', () => {
 
-  const wrapper = shallow(<TodoListAddItem  />);
+  const minProps = {
+    addTodoItem: function(){}
+  };
+
+  const wrapper = shallow(<TodoListAddItem addTodoItem={function(){}} />);
 
   it('should render <TodoListAddItem/> without crashing', () => {
-    shallow(<TodoListAddItem />);
+    shallow(<TodoListAddItem addTodoItem={function(){}} />);
   });
 
   it('user input should update state', () => {

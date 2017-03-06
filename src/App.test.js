@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import App from './App';
 import seededTodos from './todos.json';
 
-describe('App tests', () => {
+describe('<App/> component', () => {
 
   // New test.
   it('renders <App /> without crashing', () => {

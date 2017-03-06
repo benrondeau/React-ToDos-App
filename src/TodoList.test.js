@@ -5,9 +5,9 @@ import seededTodos from './todos.json';
 
 describe('TodoList tests', () => {
 
-  // New test.
+  // // New test.
   it('renders <TodoList /> without crashing', () => {
-    shallow(<TodoList />);
+    shallow(<TodoList initialTodos={seededTodos} />);
   });
 
   it('renders a TodoListItem for each todo', () => {
