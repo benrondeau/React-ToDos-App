@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TodoListItem from './TodoListItem';
 import TodoListAddItem from './TodoListAddItem';
+import SortTodos from './SortTodos';
 import './TodoList.css';
 
 class TodoList extends Component {
@@ -89,11 +90,7 @@ class TodoList extends Component {
   render() {
     return (
       <div>
-        <div id="SortBy">
-          Sort By: &nbsp;
-          <button id="sortByName" onClick={this.sortByName.bind(this)}>Name</button>&nbsp;
-          <button id="sortByDate" onClick={this.sortByRecency.bind(this)}>Recency</button>
-        </div>
+        <SortTodos sortByName={this.sortByName.bind(this)} sortByRecency={this.sortByRecency.bind(this)} />
         <div className="TodoList">
           {this.renderTodoListItems()}
           <TodoListAddItem addTodoItem={this.addTodoItem.bind(this)}/>
