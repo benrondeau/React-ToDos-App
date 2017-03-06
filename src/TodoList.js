@@ -34,7 +34,7 @@ class TodoList extends Component {
   }
 
   addTodoItem(value){
-    let currentTodos = this.state.todos.slice();
+    let currentTodos = this.state.todos.slice(); // for immutability
     currentTodos.push({
       "id": `id${this.state.todos.length}`,
       "checked": false,

@@ -6,7 +6,6 @@ class TodoListAddItem extends React.Component{
   constructor(props){
     super();
     this.state = { value: '' };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -17,8 +16,14 @@ class TodoListAddItem extends React.Component{
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.addTodoItem(this.state.value);
-    this.setState({value: ''}); // Clears out form field
+    // Basic form validation, preventing empty field submission
+    if(this.state.value === ''){
+      alert("Cannot save an empty Todo! Please add some text for your Todo.");
+    }
+    else{
+      this.props.addTodoItem(this.state.value);
+      this.setState({value: ''}); // Clears out form field
+    }
   }
 
   render(){
