@@ -33,13 +33,14 @@ class TodoList extends Component {
   }
 
   addTodoItem(value){
-    let newToDo = {
+    let currentTodos = this.state.todos.slice();
+    currentTodos.push({
       "id": `id${this.state.todos.length}`,
       "checked": false,
       "content": value,
       "created_at": Date.now()
-    }
-    this.setState({todos: this.state.todos.concat([newToDo])});
+    });
+    this.setState({todos: currentTodos});
   }
 
   sortByName(){
@@ -49,7 +50,6 @@ class TodoList extends Component {
         //Remove whitespace and uppercase characters for more accurate comparison, albeit not perfect.
         let tempA = a.content.replace(/\s+/g, '').toLowerCase();
         let tempB = b.content.replace(/\s+/g, '').toLowerCase();
-
         if (tempA < tempB) return -1;
         else if (tempA > tempB) return 1;
         return 0;
@@ -59,10 +59,8 @@ class TodoList extends Component {
     // Z -> A sort
     else{
       let sortedArray = this.state.todos.sort( (a, b)  => {
-        //Remove whitespace and uppercase characters for more accurate comparison, albeit not perfect.
         let tempA = a.content.replace(/\s+/g, '').toLowerCase();
         let tempB = b.content.replace(/\s+/g, '').toLowerCase();
-
         if (tempA > tempB) return -1;
         else if (tempA < tempB) return 1;
         return 0;
