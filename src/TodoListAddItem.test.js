@@ -1,11 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import TodoListAddItem from './TodoList';
-import seededTodos from './todos.json';
 
 describe('TodoListAddItem tests', () => {
 
-  const wrapper = shallow(<TodoListAddItem initialTodos={seededTodos} />);
+  const wrapper = shallow(<TodoListAddItem  />);
 
   it('should render <form/>', () => {
     expect(1).toEqual(1);
@@ -13,6 +12,11 @@ describe('TodoListAddItem tests', () => {
 
   it('user input should update state', () => {
     // this.state.value updates when the user types in the field
+    expect(1).toEqual(1);
+  });
+
+  it('should not accept an empty field for submission', () => {
+    // how to do this? render both components and then test?
     expect(1).toEqual(1);
   });
 

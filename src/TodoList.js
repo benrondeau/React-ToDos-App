@@ -10,7 +10,11 @@ class TodoList extends Component {
     this.state = {
       todos: props.initialTodos,
       sortedByName: false,
-      sortedByRecency: false
+      sortedByRecency: false,
+      selectedBTN: {
+        name : false,
+        recency : false
+      }
     }
   }
 
@@ -55,7 +59,7 @@ class TodoList extends Component {
         else if (tempA > tempB) return 1;
         return 0;
       });
-      this.setState({todos: sortedArray, sortedByName:true});
+      this.setState({todos: sortedArray, sortedByName:true, selectedBTN:{recency: false, name: true}});
     }
     // Z -> A sort
     else{
@@ -66,7 +70,7 @@ class TodoList extends Component {
         else if (tempA < tempB) return 1;
         return 0;
       });
-      this.setState({todos: sortedArray, sortedByName:false});
+      this.setState({todos: sortedArray, sortedByName:false, selectedBTN:{recency: false, name: true}});
     }
   }
 
@@ -76,21 +80,25 @@ class TodoList extends Component {
       let sortedArray = this.state.todos.sort( (a, b)  => {
         return a.created_at - b.created_at;
       });
-      this.setState({todos: sortedArray, sortedByRecency:true});
+      this.setState({todos: sortedArray, sortedByRecency:true, selectedBTN:{recency: true, name: false}});
     }
     // 9 -> 0 sort
     else{
       let sortedArray = this.state.todos.sort( (a, b)  => {
         return b.created_at - a.created_at;
       });
-      this.setState({todos: sortedArray, sortedByRecency:false});
+      this.setState({todos: sortedArray, sortedByRecency:false , selectedBTN:{recency: true, name: false}});
     }
   }
 
   render() {
     return (
       <div>
-        <SortTodos sortByName={this.sortByName.bind(this)} sortByRecency={this.sortByRecency.bind(this)} />
+        <SortTodos
+          sortByName={this.sortByName.bind(this)}
+          sortByRecency={this.sortByRecency.bind(this)}
+          selectedBTN={this.state.selectedBTN}
+        />
         <div className="TodoList">
           {this.renderTodoListItems()}
           <TodoListAddItem addTodoItem={this.addTodoItem.bind(this)}/>

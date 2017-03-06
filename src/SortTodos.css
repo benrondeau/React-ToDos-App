@@ -8,3 +8,9 @@
   border: none;
   cursor: pointer;
 }
+
+.SelectedBTN {
+  border: 2px solid black !important;
+  border-radius: 3px;
+  font-weight: bold;
+}
