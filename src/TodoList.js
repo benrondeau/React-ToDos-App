@@ -15,17 +15,17 @@ class TodoList extends Component {
 
   handleCheck(id, checked) {
     this.setState((previousState) => {
-      previousState.todos.find( todo => todo.id === `id${id.toString()}`).checked = checked
+      previousState.todos.find( todo => todo.id === id).checked = checked
       return previousState;
     });
   }
 
   renderTodoListItems() {
-    return this.state.todos.map((todo, index) => {
+    return this.state.todos.map((todo) => {
       return (
         <TodoListItem
-          key={index}
-          onChange={(e) => this.handleCheck(index, e.target.checked)}
+          key={todo.id}
+          onChange={(e) => this.handleCheck(todo.id, e.target.checked)}
           {...todo}
         />
       );

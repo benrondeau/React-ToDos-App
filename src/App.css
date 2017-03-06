@@ -3,7 +3,7 @@
 .App {
   text-align: center;
   background-color: #f9d11d;
-  width: 40%;
+  width: 400px;
   display: flex;
   flex-direction: column;
   margin: 20px auto;
