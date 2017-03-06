@@ -6,8 +6,8 @@ describe('TodoListAddItem tests', () => {
 
   const wrapper = shallow(<TodoListAddItem  />);
 
-  it('should render <form/>', () => {
-    expect(1).toEqual(1);
+  it('should render <TodoListAddItem/> without crashing', () => {
+    shallow(<TodoListAddItem />);
   });
 
   it('user input should update state', () => {

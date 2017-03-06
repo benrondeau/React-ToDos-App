@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for App.js</title>
+    <title>Code coverage report for SortTodos.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -16,18 +16,18 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="index.html">All files</a> App.js
+      <a href="index.html">All files</a> SortTodos.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>1/1</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>2/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/1</span>
+        <span class='fraction'>2/2</span>
       </div>
     </div>
   </div>
@@ -60,40 +60,49 @@
 15
 16
 17
-18</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+18
+19
+20
+21</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from 'react';
-import TodoList from './TodoList';
-import seededTodos from './todos.json';
-import './App.css';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import './SortTodos.css';
 &nbsp;
-class App extends Component {
-  render() {
-    return (
-      &lt;div className="App"&gt;
-        &lt;h2&gt;Todo List App&lt;/h2&gt;
-        &lt;TodoList initialTodos={seededTodos} /&gt;
-      &lt;/div&gt;
-    );
-  }
+function SortTodos({ sortByName, sortByRecency, selectedBTN }) {
+  return(
+    &lt;div id="SortBy"&gt;
+      Sort By: &amp;nbsp;
+      &lt;button id="sortByName" onClick={sortByName} className={selectedBTN.name ? <span class="branch-0 cbranch-no" title="branch not covered" >"SelectedBTN" </span>:""}&gt;Name&lt;/button&gt;&amp;nbsp;
+      &lt;button id="sortByDate" onClick={sortByRecency} className={selectedBTN.recency ? <span class="branch-0 cbranch-no" title="branch not covered" >"SelectedBTN" </span>:""}&gt;Recency&lt;/button&gt;
+    &lt;/div&gt;
+  )
 }
 &nbsp;
-export default App;
+SortTodos.propTypes = {
+  sortByName: React.PropTypes.func.isRequired,
+  sortByRecency: React.PropTypes.func.isRequired,
+  selectedBTN: React.PropTypes.object.isRequired
+};
+&nbsp;
+export default SortTodos;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
