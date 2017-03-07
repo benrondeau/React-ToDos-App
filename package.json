@@ -2,10 +2,8 @@
   "name": "YEI-interview",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://benrondeau.github.io/YEI-ToDos-App/",
   "devDependencies": {
     "enzyme": "^2.4.1",
-    "gh-pages": "^0.12.0",
     "react-addons-test-utils": "^15.3.2",
     "react-scripts": "0.7.0"
   },
@@ -15,9 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "test": "react-scripts test --env=jsdom",
-    "build": "node node_modules/react-scripts/scripts/build.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "test": "react-scripts test --env=jsdom --coverage",
+    "build": "node node_modules/react-scripts/scripts/build.js"
   }
 }
