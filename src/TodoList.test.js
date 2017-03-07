@@ -25,7 +25,7 @@ describe('<TodoList /> component', () => {
     expect(wrapper.find('SortTodos').length).toEqual(1);
   });
 
-  it('adds a new Todo item to the list', ()=>{
+  it('adds a new Todo item to the list', () => {
     wrapper.instance().addTodoItem('Testing123');
     expect(wrapper.instance().state.todos.length).toEqual(6);
   });
